@@ -29,10 +29,10 @@ compliance_alignment:
   risk_mitigation: "Eliminates lateral movement and ensures non-repudiation."
 ```
 Core Security Principles:
-*Least Privilege by Default: The AI agent executes under a dedicated, unprivileged service account with zero administrative capabilities.
-*Action Segregation (The Tool Broker): The LLM never touches the operating system directly. It outputs structured intent JSON; a localized Tool Broker evaluates this compared to an AppArmor-enforced Policy Engine.
-*Hardware Cryptographic Approvals: Critical operations require physical human verification using an isolated FIDO2 hardware token (such as an Ubikey). By separating the authorization device -and workflow- from the raw compute node to better simulate a production-grade enterprise environment, the policy engine issues single-use, cryptographically signed execution tokens.
-*Network Segmentation: The compute node has no default route to internet. Outbound traffic is blocked by default and permitted exclusively through audited proxies on the hardened Management Node.
+* **Least Privilege by Default: The AI agent executes under a dedicated, unprivileged service account with zero administrative capabilities.
+* **Action Segregation (The Tool Broker): The LLM never touches the operating system directly. It outputs structured intent JSON; a localized Tool Broker evaluates this compared to an AppArmor-enforced Policy Engine.
+* **Hardware Cryptographic Approvals: Critical operations require physical human verification using an isolated FIDO2 hardware token (such as an Ubikey). By separating the authorization device -and workflow- from the raw compute node to better simulate a production-grade enterprise environment, the policy engine issues single-use, cryptographically signed execution tokens.
+* **Network Segmentation: The compute node has no default route to internet. Outbound traffic is blocked by default and permitted exclusively through audited proxies on the hardened Management Node.
 ```yaml
 # [POLICY CONFIGURATION BLOCK - ACCESS CONTROL]
 policy_engine:
