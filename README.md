@@ -43,10 +43,10 @@ policy_engine:
 
 ⚙️ Authorization Tiers
 The framework categorizes each agent intents into four strict execution tiers:
-* **Tier 0 (Observation): Read-only access to localized datasets, model querying, and internal logs. No approval required.
-* **Tier 1 (Reversible Actions): Sandboxed data transformation, temporary file creation, and local benchmarking. No approval required; fully logged.
-* **Tier 2 (Sensitive Actions): Requesting restricted outbound network access (e.g., API calls) or modifying non-critical configurations. Requires remote software approval via the Management Node.
-* **Tier 3 (Critical Actions):** Destructive file operations, system state changes, security policy modifications, or financial resource allocation (such as automated API credit top-ups, strictly bounded by a hard-coded $10 USD ceiling via temporary virtual tokens). *Requires physical FIDO2 hardware touch authorization directly on the compute node.*
+* Tier 0 (Observation): Read-only access to localized datasets, model querying, and internal logs. No approval required.
+* Tier 1 (Reversible Actions): Sandboxed data transformation, temporary file creation, and local benchmarking. No approval required; fully logged.
+* Tier 2 (Sensitive Actions): Requesting restricted outbound network access (e.g., API calls) or modifying non-critical configurations. Requires remote software approval via the Management Node.
+* Tier 3 (Critical Actions):** Destructive file operations, system state changes, security policy modifications, or financial resource allocation (such as automated API credit top-ups, strictly bounded by a hard-coded $10 USD ceiling via temporary virtual tokens). *Requires physical FIDO2 hardware touch authorization directly on the compute node.*
 
 📜 Audit Trail & Non-Repudiation
 Every transaction processed by the Tool Broker generates a structured, immutable log entry for compliant auditing:
